@@ -33,6 +33,14 @@ public class Practice {
      * @throws NullPointerException if words is null
      */
     public static String shortestWord(Set<String> words) {
+        int wordLength = Integer.MAX_VALUE;
+        String wordChamp = "";
+        for (String word : words) {
+            if(word.length() < wordLength){
+                wordChamp = word;
+                wordLength = word.length();
+            }
+        }
         return null;
     }
 
