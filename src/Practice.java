@@ -208,7 +208,21 @@ public class Practice {
      * @return the sum of all the vertices
      */
     public static int graphSum(Vertex<Integer> start) {
-        return 0;
+        if(start == null) return 0;
+        int sum = 0;
+        Set<Vertex<Integer>> visited = new HashSet<>();
+        graphSumHelper(start, visited);
+        for(Vertex<Integer> cur : visited){
+            sum+= cur.data;
+        }
+        return sum;
+    }
+    public static void graphSumHelper(Vertex<Integer> start, Set<Vertex<Integer>> visited){
+        if (start == null || visited.contains(start)) return;
+        visited.add(start);
+        for(Vertex<Integer> neighbor : start.neighbors){
+            graphSumHelper(neighbor, visited);
+        }
     }
 
     /**
