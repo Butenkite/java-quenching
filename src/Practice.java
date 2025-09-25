@@ -42,8 +42,13 @@ public class Practice {
                 wordChamp = word;
                 wordLength = word.length();
             }
+            else if(word.length() == wordLength){
+                if(word.compareTo(wordChamp) < 0){ 
+                    wordChamp = word;
+                }
+            }
         }
-        return null;
+        return wordChamp;
     }
 
     /**
