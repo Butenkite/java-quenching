@@ -120,7 +120,14 @@ public class Practice {
      * @return the number of levels in the tree
      */
     public static int levelCount(BinaryTreeNode<?> root) {
-        return 0;
+        return levelCountHelper(root, 0);
+    }
+
+    public static int levelCountHelper(BinaryTreeNode<?> root, int level) {
+        if (root == null) return level;
+        int leftLevel = levelCountHelper(root.left, level + 1);
+        int rightLevel = levelCountHelper(root.right, level + 1);
+        return Math.max(leftLevel, rightLevel);
     }
 
 
