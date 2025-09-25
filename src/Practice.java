@@ -72,7 +72,14 @@ public class Practice {
      * @throws IllegalArgumentException if head is null
      */
     public static int biggestNumber(ListNode<Integer> head) {
-        return 0;
+        int kingNum = Integer.MIN_VALUE;
+        while(head != null){
+            if(head.data > kingNum){
+                kingNum = head.data;
+            }
+            head = head.next;
+        }
+        return kingNum;
     }
 
     /**
